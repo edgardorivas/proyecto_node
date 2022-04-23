@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS proyecto;
-CREATE DATABASE proyecto;
-USE proyecto;
+DROP DATABASE IF EXISTS proyecto_node;
+CREATE DATABASE proyecto_node;
+USE proyecto_node;
 /*-*/
 
 CREATE TABLE usuario (
@@ -8,7 +8,7 @@ CREATE TABLE usuario (
     nombre VARCHAR(50) NOT NULL,
     clave  VARCHAR(40) NOT NULL,
     rol  ENUM('ADMI','USUARIO') DEFAULT 'USUARIO',
-    fecha_creacion DATETIME NOT NULL
+    fecha_creacion DATE NOT NULL
     
 )ENGINE=innoDB;
 
