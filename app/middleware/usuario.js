@@ -11,8 +11,8 @@ async function mostrarTodo(tabla) {
 }
 async function buscarEspecifico(tabla, datos) {
   try {
-    let consulta = 'SELECT * FROM ' + tabla + ' where ?';
-    let respuesta = await sql.query(consulta, datos);
+    let consulta = 'SELECT * FROM ?? where ?';
+    let respuesta = await sql.query(consulta, [tabla, datos]);
     return respuesta;
   } catch (error) {
     console.log(error);

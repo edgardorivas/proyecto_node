@@ -9,8 +9,9 @@ async function mostrarUsuarios(req, res) {
   res.json(responder);
 }
 async function mostrarUsuariosEspecifico(req, res) {
-  let tabla = { id: 1 }//req.body.id };
-  let responder = await sql.mostrarTodo(tabla);
+  let tabla = 'usuario';//req.body.id };
+  let datos = { id: 1 };
+  let responder = await sql.buscarEspecifico(tabla, datos);
   res.status(200);
   res.json(responder);
 }
