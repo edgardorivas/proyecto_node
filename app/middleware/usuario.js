@@ -18,5 +18,14 @@ async function buscarEspecifico(tabla, datos) {
     console.log(error);
   }
 }
+async function ingresar(tabla, datos) {
+  try {
+    let consulta = 'insert into ?? set ?';
+    let respuesta = await sql.query(consulta, [tabla, datos]);
+    return respuesta
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-module.exports = { mostrarTodo, buscarEspecifico };
+module.exports = { mostrarTodo, buscarEspecifico, ingresar };
